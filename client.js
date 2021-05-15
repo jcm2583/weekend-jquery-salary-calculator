@@ -17,7 +17,7 @@ $ ('#submitButton').on('click', submitInfo);
 $ ('#submitButton').on('click', calculateMonthlyCosts);
 
 // need to add delete button
-$ ('#deleteBtn').on('click', deleteButton);
+$ ('.tableTarget').on('click', '.deleteBtn', deleteButton);
 
 
 
@@ -83,5 +83,7 @@ function calculateMonthlyCosts () {
 }
 
 function deleteButton () {
-    $ ('tr').remove('')
+    //testing function
+    console.log('hello');
+    $ (this).closest('tr').remove();
 }
