@@ -3,3 +3,7 @@ header {
     color: white;
     text-align: center;
 }
+
+.highlighter {
+    background-color: red;
+}

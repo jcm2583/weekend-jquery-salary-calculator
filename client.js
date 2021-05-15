@@ -9,11 +9,15 @@ function readyNow () {
 console.log('jq is working!');
 
 // click listeners
-$ ('#submitButton').on('click', submitInfo)
-$ ('#submitButton').on('click', calculateMonthlyCosts)
 
+// button to submit employee info
+$ ('#submitButton').on('click', submitInfo);
 
+// button to add up salaries
+$ ('#submitButton').on('click', calculateMonthlyCosts);
 
+// need to add delete button
+$ ('#deleteBtn').on('click', deleteButton);
 
 
 
@@ -48,6 +52,9 @@ let employeeObj = {
         <td>${employeeObj.id}</td>
         <td>${employeeObj.title}</td>
         <td>${employeeObj.annualSalary}</td>
+        <td>
+            <button class="deleteBtn">DELETE</button>
+        </td>
         </tr>
     `)
 }
@@ -64,11 +71,17 @@ function calculateMonthlyCosts () {
     let monthlyCosts = 0;
     for (let i=0; i<totalMonthlyCosts.length; i++) {
         monthlyCosts += totalMonthlyCosts[i].annualSalary / 12;
-
-
     }
-    // $ ('#totalMonthlyCost').append(monthlyCosts);
-    console.log(('salary total', monthlyCosts));
-    $ ('#totalMonthlyCost').text(`Total Monthly Costs: $${monthlyCosts}`);
+
+    console.log(('salary total', monthlyCosts.toFixed(2)));
+    $ ('#totalMonthlyCost').text(`Total Monthly Costs: $${monthlyCosts.toFixed(2)}`);
+
+    // if monthly costs > 20,000, add red backgound
+    if (monthlyCosts > 20000) {
+        $ ('#totalMonthlyCost').addClass('highlighter');
+    }
 }
 
+function deleteButton () {
+    $ ('tr').remove('')
+}
