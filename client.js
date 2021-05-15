@@ -19,10 +19,6 @@ $ ('#submitButton').on('click', calculateMonthlyCosts);
 // need to add delete button
 $ ('.tableTarget').on('click', '.deleteBtn', deleteButton);
 
-
-
-
-
 }
 
 
