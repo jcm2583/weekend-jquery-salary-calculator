@@ -49,7 +49,7 @@ let employeeObj = {
         <td>${employeeObj.title}</td>
         <td>${employeeObj.annualSalary}</td>
         <td>
-            <button class="deleteBtn">DELETE</button>
+            <button class="deleteBtn btn btn-danger">DELETE</button>
         </td>
         </tr>
     `)
@@ -83,3 +83,7 @@ function deleteButton () {
     console.log('hello');
     $ (this).closest('tr').remove();
 }
+
+// remove deleted employee from total monthly costs
+
+
